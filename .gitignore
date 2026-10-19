@@ -1,0 +1,24 @@
+# Python önbellek ve derlenmiş dosyaları
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Sanal ortamlar (Virtual Environments)
+.venv/
+venv/
+env/
+
+# Jupyter Notebook kontrol noktaları 
+.ipynb_checkpoints/
+
+# VS Code ve diğer IDE yerel ayarları
+.vscode/
+.idea/
+
+# Ortam değişkenleri
+.env
+
+# İşletim sistemi gereksiz dosyaları (Windows / macOS)
+Thumbs.db
+Desktop.ini
+.DS_Store
