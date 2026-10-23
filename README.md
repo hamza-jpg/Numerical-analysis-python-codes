@@ -2,11 +2,12 @@
 
 This repository contains Python implementations, exercises, and algorithms developed for the **Numerical Analysis** course.
 
-##  Contents
+## Contents
 
 * **`numpy_array.py`**: Creates an $n \times n$ matrix of random $d$-digit integers using NumPy and replaces its centered $m \times m$ subarray with `-1`.
+* **`real_to_binary_converter.py`**: Converts integer (`integer_to_binary`), fractional/decimal (`decimal_to_binary`), and real floating-point numbers (`real_to_binary`) into fixed-point binary bit arrays using NumPy and `math.modf`.
 
-##  Requirements
+## Requirements
 
 * **Python** 3.10+
 * **NumPy**
@@ -17,14 +18,15 @@ Install the required dependencies via `pip`:
 python -m pip install numpy
 ```
 
-##  Usage
+## Usage
 
 Clone the repository and run any script directly from the terminal:
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo-name>.git
-cd <your-repo-name>
+git clone https://github.com/hamza-jpg/Numerical-analysis-python-codes.git
+cd Numerical-analysis-python-codes
 python numpy_array.py
+python real_to_binary_converter.py
 ```
 
 ### Example Output (`numpy_array.py`)
@@ -45,6 +47,14 @@ Changed array: replaced by -1 from mid to 3 by 3
  [50 19 47 82 31]]
 ```
 
+### Example Output (`real_to_binary_converter.py`)
+
+```text
+This is the integer part:  [0 0 0 0 0 0 0 1 0 1 1 1 0 1 1 1]
+This is the decimal part:  [1 1 0 1 0 0 0 0 0 1 1 0 0 0 1]
+[0 0 0 0 0 0 0 1 0 1 1 1 0 1 1 1] , [1 1 0 1 0 0 0 0 0 1 1 0 0 0 1]
+```
+
 ## 📄 License
 
-This project is open-source and available for educational purposes.
+This project is open-source and licensed under the [MIT License](LICENSE).
