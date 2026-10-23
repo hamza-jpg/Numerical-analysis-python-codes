@@ -1,6 +1,9 @@
 import numpy as np
+import math
+
 int_number = 375
 decimal_number = 0.814
+real_number = 375.814
 
 def integer_to_binary(number: int, bit = 16):
     bits = np.zeros(bit, dtype=int)
@@ -21,8 +24,15 @@ def decimal_to_binary(number: float, bit = 16):
         if(number > exp):
             number = number - exp
             bits[i] = 1
-    bits = bits[1::]
+    bits = bits[1::] # skip (2^0 = 1) bit, and start from index 1 (2^(-1)) 
     return bits
 
 print("This is the decimal part: ", decimal_to_binary(decimal_number))
 
+def real_to_binary(number: float):
+    decimal_part, integer_part = math.modf(number)
+    binary_integer = integer_to_binary(integer_part)
+    binary_decimal = decimal_to_binary(decimal_part)
+    print(binary_integer, ",", binary_decimal)
+
+real_to_binary(real_number)
