@@ -7,7 +7,15 @@ class IEEE754:
         self.sign_bit = 0 if x > 0 else 1
         self.integer_part = self.integer2binary(int(x))
         self.decimal_part = self.decimal2binary(x - int(x))
-        self.exponent_part = self.integer2binary((self.integer_part - 1) + 15)
+        self.exponent_part = self.integer2binary((self.integer_part.size - 1) + 15)
+
+    def __str__(self):
+        ieee754 = np.zeros(16, dtype=int)
+        ieee754[0] = self.sign_bit
+        mantissa = np.append(self.integer_part[1::], self.decimal_part)
+        ieee754[1: 6:] = self.exponent_part
+        ieee754[6: 6 + mantissa.size:] = mantissa
+        return np.array2string(ieee754, separator="|")
 
     @staticmethod
     def integer2binary(x):
